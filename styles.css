@@ -1,0 +1,201 @@
+/* General body styling */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f0f8ff; /* Light blue background */
+    color: #333; /* Dark text for readability */
+}
+
+/* Header styling */
+header {
+    background-color: #db7093; /* Darker pink */
+    padding: 20px;
+    text-align: center;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+}
+
+header h1 {
+    color: #fff; /* White header text */
+    font-size: 2.5em;
+    margin: 0;
+}
+
+nav a {
+    margin: 0 15px;
+    text-decoration: none;
+    color: #fff;
+    font-weight: bold;
+    font-size: 1.1em;
+}
+.Buy{
+  background-color: green;
+  text color: white;
+}
+nav a:hover {
+    color: #333; /* Dark text on hover for contrast */
+}
+
+/* Main section styling */
+main {
+    padding: 20px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+/* Product listing styling */
+.products {
+    display: flex;
+    gap: 20px;
+    justify-content: space-around;
+    flex-wrap: wrap; /* Allows wrapping for smaller screens */
+}
+
+.product {
+    background-color: #fff;
+    border: 1px solid #ddd;
+    padding: 20px;
+    text-align: center;
+    width: 250px; /* Slightly wider for better presentation */
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Add shadow */
+    transition: transform 0.3s ease-in-out;
+}
+
+.product:hover {
+    transform: scale(1.05); /* Grows slightly on hover */
+}
+
+.product img {
+    width: 100%;
+    height: auto;
+    border-radius: 8px;
+}
+
+.product h3 {
+    color: #c71585; /* Darker pink */
+    font-size: 1.2em;
+    margin: 15px 0;
+}
+
+/* Button styling */
+button {
+    padding: 10px;
+    border-radius: 5px;
+    font-size: 1em;
+    cursor: pointer;
+    transition: background-color 0.3s ease-in-out; /* Smooth color change */
+}
+
+.add-to-cart, .Buy {
+    background-color: #c71585; /* Darker pink */
+    color: white;
+    border: none;
+}
+
+.Buy {
+    background-color: #28a745; /* Green color */
+}
+
+/* Hover effect for "Buy" button */
+.Buy:hover {
+    background-color: #218838; /* Darker green for hover effect */
+}
+
+#checkout {
+    background-color: #006400; /* Dark green for checkout */
+    border: none;
+    padding: 15px 30px;
+    font-size: 1.1em;
+    color: white;
+    border-radius: 5px;
+    margin-left: 20px; /* Space between cart and button */
+}
+
+#checkout:hover {
+    background-color: #004d00; /* Darker green on hover */
+}
+
+/* Cart section styling */
+.cart-container {
+    display: flex; /* Flexbox for alignment */
+    justify-content: space-between; /* Space between cart and button */
+    align-items: flex-start; /* Align items to the top */
+    margin-top: 40px;
+    padding: 20px;
+    background-color: #fff;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.cart {
+    flex-grow: 1; /* Allow the cart to take up more space */
+    text-align: left;
+}
+
+#total-price {
+    font-weight: bold;
+    font-size: 1.5em;
+    margin-top: 10px;
+    display: inline-block; /* Ensure it's inline and visible */
+}
+
+#cart-items {
+    margin: 10px 0;
+    list-style: none;
+    padding: 0;
+    max-height: 200px; /* Set a max height for cart items */
+    overflow-y: auto; /* Scroll if items overflow */
+}
+
+.cart-item {
+    padding: 10px 0;
+    border-bottom: 1px solid #ddd;
+}
+
+.cart-item:last-child {
+    border-bottom: none;
+}
+
+/* Footer styling */
+footer {
+    background-color: #db7093; /* Darker pink */
+    padding: -10px;
+    text-align: center;
+    color: #fff;
+    position: fixed;
+    width: 100%;
+    bottom: 0;
+    box-shadow: 0 -2px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Mobile responsiveness */
+@media (max-width: 768px) {
+    .products {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    header h1 {
+        font-size: 2em;
+    }
+
+    nav a {
+        font-size: 1em;
+    }
+
+    .cart-container {
+        flex-direction: column; /* Stack cart and button vertically */
+        align-items: center;
+    }
+
+    #checkout {
+        margin-top: 20px;
+        width: 100%; /* Full width on smaller screens */
+    }
+
+    #total-price {
+        font-size: 1.3em;
+    }
+}
