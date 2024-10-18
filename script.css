@@ -34,6 +34,13 @@ function updateCart() {
     // Update cart count (number of items in cart)
     document.getElementById('cart-count').textContent = cart.length;
 }
+// Add an event listener to all the "Buy" buttons
+document.querySelectorAll('.Buy').forEach(function(button) {
+    button.addEventListener('click', function() {
+        // Redirect to payment page when "Buy" button is clicked
+        window.location.href = 'payment.html'; // Path to your payment page
+    });
+});
 
 // Checkout button functionality
 document.getElementById('checkout').addEventListener('click', () => {
