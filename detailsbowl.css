@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Wooden Bowl Product</title>
+    <link rel="stylesheet" href="detailsbowl.css">
+</head>
+<body>
+    <div class="product-container">
+        <!-- Product Title -->
+        <h2 class="product-title">Wooden Bowl</h2>
+
+        <!-- Product Image -->
+        <img src="https://assets.onecompiler.app/42q457vx6/42s5w8awd/bowl.jpg" alt="Wooden Bowl" class="product-image">
+
+        <!-- Product Description -->
+        <p class="product-description">
+            This beautifully crafted wooden bowl is made from 100% natural wood and is perfect for serving salads, fruits, or snacks. It's durable, eco-friendly, and adds a rustic touch to your home.
+        </p>
+
+        <!-- Product Price -->
+        <p class="product-price">Rs 399.00</p>
+
+        <!-- Add to Cart Button -->
+        <button class="add-to-cart-btn">Add to Cart</button>
+    </div>
+</body>
+</html>
