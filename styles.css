@@ -14,12 +14,20 @@ header {
     text-align: center;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Subtle shadow */
 }
-
-header h1 {
-    color: #fff; /* White header text */
-    font-size: 2.5em;
-    margin: 0;
+h1 {
+    color: white; /* Changes the text color to white */
+    font-size: 24px; /* Adjust the size as needed */
+    display: flex; /* Aligns the image and text in a row */
+    align-items: center; 
 }
+
+.logo-icon {
+  align:center
+    width: 50px; /* Adjust the width of the logo */
+    height: 50px; /* Adjust the height of the logo */
+    margin-right: 10px; 
+}
+
 .pink-heading {
     color: green;
 }
