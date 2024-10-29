@@ -23,7 +23,7 @@ function updateCart() {
 
     cart.forEach(item => {
         const cartItem = document.createElement('div');
-        cartItem.textContent = `${item.name} - ₹${item.price}`;  // Display product name and price
+        cartItem.textContent = `${item.name} ₹${item.price}`;  // Display product name and price
         cartItemsContainer.appendChild(cartItem);
     });
 
