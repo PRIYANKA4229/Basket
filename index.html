@@ -3,46 +3,66 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Pri'sbasket</title>
+    <title>Simple E-Commerce</title>
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <header>
-        <h1>
-        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<img src="https://assets.onecompiler.app/42q457vx6/42rd6upnv/20240906_185337.jpg" alt="" class="logo-icon"> Pri's Basket
-        </h1>
-        <nav>
-             <a href="login.html">Login</a>
-            <a href="#">Cart (<span id="cart-count">0</span>)</a>
-            <a href="#"><a href="mailto:info@priyankasbasket.com">Contact:info@priyankasbasket.com</a></p> 
-           </nav>
-    </header>
+   <header>
+    <h1>
+       &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <img src="https://assets.onecompiler.app/42q457vx6/42rd6upnv/20240906_185337.jpg" alt="Logo" class="logo-icon"> 
+        Pri's Basket
+    </h1>
+    
+    <nav>
+        <a href="login.html">Login</a>
+        <a href="#">Cart (<span id="cart-count">0</span>)</a>
+        <a href="feedback.html">Feedack</a>
+      <a href="search.html">Search</a>
+      <a href="track.html">Track</a>
+        
+        
+        <a href="mailto:info@priyankasbasket.com">info@priyankasbasket.com</a>
+    </nav>
+</header>
 
     <main>
         <!-- Product Listing Section -->
         <section class="products">
-           <h2 class="pink-heading">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b>Hurry!!!</b><br>"Fill up your Cart"</b></h2>
-    <div class="product" data-id="1">
+           <h2 class="pink-heading">&nbsp;&nbsp;<b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"hurry!!!</b><br>Fill up your Cart"</b></h2>
+            <div class="product" data-id="1">
                 <img src="https://assets.onecompiler.app/42q457vx6/42s5w8awd/vase.jpg" alt="Product 1">
                 <h3>Handmade Vase</h3>
-                  <p>₹249</p>
- <a href="vasedetails.html">
-    <button class="details">Details</button>
-</a>
-
+                <p>₹249</p>
+                <a href="vasedetails.html">
+                    <button class="details">Details</button>
+                </a>
                 <button class="add-to-cart">Add to Cart</button>
                 <button class="Buy">Buy</button>
+    
+                <!-- Review Section for Product 1 -->
+                <div class="reviews">
+                    <p id="customer-1" class="review-customer"></p> <!-- Placeholder for customer name -->
+                    <p id="review-1" class="review-text"></p> <!-- Placeholder for the review -->
+                    <p id="rating-1" class="review-rating"></p> <!-- Placeholder for the rating -->
+                </div>
             </div>
+
             <div class="product" data-id="2">
                 <img src="https://assets.onecompiler.app/42q457vx6/42s5w8awd/bowl.jpg" alt="Product 2">
                 <h3>Wooden Bowl</h3>
-              <p>₹399</p>
- <a href="detailsbowl.html">
-    <button class="details">Details</button>
-</a>
-
+                <p>₹399</p>
+                <a href="detailsbowl.html">
+                    <button class="details">Details</button>
+                </a>
                 <button class="add-to-cart">Add to Cart</button>
                 <button class="Buy">Buy</button>
+    
+                <!-- Review Section for Product 2 -->
+                <div class="reviews">
+                    <p id="customer-2" class="review-customer"></p> <!-- Placeholder for customer name for product 2 -->
+                    <p id="review-2" class="review-text"></p> <!-- Placeholder for review of product 2 -->
+                    <p id="rating-2" class="review-rating"></p> <!-- Placeholder for rating of product 2 -->
+                </div>
             </div>
         </section>
 
@@ -64,8 +84,80 @@
         document.getElementById('checkout').addEventListener('click', function() {
             window.location.href = 'payment.html'; // Path to your payment page
         });
-    </script>
 
-    <script src="script.js"></script>
+        // Array of 10 reviews, ratings, and customer names for Product 1
+        const reviewsProduct1 = [
+            { customer: "Alice", review: "Great quality!", rating: "★★★★★" },
+            { customer: "Bob", review: "Really loved it.", rating: "★★★★☆" },
+            { customer: "Charlie", review: "Worth the price!", rating: "★★★★★" },
+            { customer: "Diana", review: "Could be better.", rating: "★★★☆☆" },
+            { customer: "Eve", review: "Excellent craftsmanship!", rating: "★★★★★" },
+            { customer: "Frank", review: "Not bad.", rating: "★★★☆☆" },
+            { customer: "Grace", review: "Beautiful design!", rating: "★★★★★" },
+            { customer: "Hank", review: "Good but fragile.", rating: "★★★☆☆" },
+            { customer: "Ivy", review: "Highly recommend!", rating: "★★★★★" },
+            { customer: "Jack", review: "Just okay.", rating: "★★☆☆☆" }
+        ];
+
+        // Index to track which review is being displayed for Product 1
+        let currentReviewIndex1 = 0;
+
+        // Function to update review, rating, and customer name for Product 1
+        function updateReviewProduct1() {
+            // Get the review elements by their ID for Product 1
+            const customerElement1 = document.getElementById('customer-1');
+            const reviewTextElement1 = document.getElementById('review-1');
+            const reviewRatingElement1 = document.getElementById('rating-1');
+
+            // Update the text content with the current customer, review, and rating for Product 1
+            customerElement1.textContent = "Customer: " + reviewsProduct1[currentReviewIndex1].customer;
+            reviewTextElement1.textContent = reviewsProduct1[currentReviewIndex1].review;
+            reviewRatingElement1.textContent = reviewsProduct1[currentReviewIndex1].rating;
+
+            // Move to the next review (looping back to the first if necessary)
+            currentReviewIndex1 = (currentReviewIndex1 + 1) % reviewsProduct1.length;
+        }
+
+        // Start the review update cycle (every 2 seconds) for Product 1
+        setInterval(updateReviewProduct1, 2000);
+        updateReviewProduct1(); // Initial call
+
+        // Array of 10 reviews, ratings, and customer names for Product 2
+        const reviewsProduct2 = [
+            { customer: "Linda", review: "Very sturdy!", rating: "★★★★☆" },
+            { customer: "Michael", review: "Loved the natural finish.", rating: "★★★★★" },
+            { customer: "Nina", review: "Perfect for the kitchen!", rating: "★★★★☆" },
+            { customer: "Oliver", review: "A bit overpriced.", rating: "★★★☆☆" },
+            { customer: "Patricia", review: "Amazing design!", rating: "★★★★★" },
+            { customer: "Quincy", review: "Not as expected.", rating: "★★★☆☆" },
+            { customer: "Rachel", review: "Great craftsmanship!", rating: "★★★★★" },
+            { customer: "Sam", review: "Fragile but beautiful.", rating: "★★★☆☆" },
+            { customer: "Tina", review: "Good value for money.", rating: "★★★★☆" },
+            { customer: "Uma", review: "Just fine.", rating: "★★★☆☆" }
+        ];
+
+        // Index to track which review is being displayed for Product 2
+        let currentReviewIndex2 = 0;
+
+        // Function to update review, rating, and customer name for Product 2
+        function updateReviewProduct2() {
+            // Get the review elements by their ID for Product 2
+            const customerElement2 = document.getElementById('customer-2');
+            const reviewTextElement2 = document.getElementById('review-2');
+            const reviewRatingElement2 = document.getElementById('rating-2');
+
+            // Update the text content with the current customer, review, and rating for Product 2
+            customerElement2.textContent = "Customer: " + reviewsProduct2[currentReviewIndex2].customer;
+            reviewTextElement2.textContent = reviewsProduct2[currentReviewIndex2].review;
+            reviewRatingElement2.textContent = reviewsProduct2[currentReviewIndex2].rating;
+
+            // Move to the next review (looping back to the first if necessary)
+            currentReviewIndex2 = (currentReviewIndex2 + 1) % reviewsProduct2.length;
+        }
+
+        // Start the review update cycle (every 2 seconds) for Product 2
+        setInterval(updateReviewProduct2, 2000);
+        updateReviewProduct2(); // Initial call
+    </script>
 </body>
 </html>
