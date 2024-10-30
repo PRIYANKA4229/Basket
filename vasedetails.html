@@ -1,82 +1,345 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Details of our handcrafted flower vase">
-    <title>Flower Vase Details</title>
-    <link rel="stylesheet" href="vasedetails.css">
-</head>
-<body>
+/* Global Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
 
-    <!-- Header Section -->
-    <header>
-        <h1>Flower Vase Collection</h1>
-        <nav>
-            <ul>
-                <li><a href="index.html">Home</a></li>
-                <li><a href="#vase-details">Details</a></li>
-                <li><a href="#reviews">Customer Reviews</a></li>
-                <li><a href="#contact">Contact Us</a></li>
-            </ul>
-        </nav>
-    </header>
+body {
+    font-family: 'Roboto', sans-serif;
+    background-color: #f5f5f5;
+    color: #333;
+    line-height: 1.6;
+}
 
-    <!-- Vase Details Section -->
-    <section id="vase-details" class="vase-details">
-        <div class="image-container">
-            <img src="https://assets.onecompiler.app/42q457vx6/42s5w8awd/vase.jpg" alt="Flower Vase" class="vase-image">
-        </div>
-        <div class="vase-info">
-            <h2> Handcrafted Flower Vase</h2>
-            <p>This elegant flower vase is handcrafted with precision and care, using high-quality ceramic materials. The minimalistic design makes it perfect for any home or office decor. It adds a touch of sophistication to any space and is perfect for holding fresh flowers or as a standalone piece of art.</p>
-            
-            <ul class="vase-specs">
-                <li><strong>Material:</strong> Ceramic</li>
-                <li><strong>Dimensions:</strong> 10" x 5" (25cm x 13cm)</li>
-                <li><strong>Weight:</strong> 1.5 kg</li>
-                <li><strong>Available Colors:</strong> Ivory, Blue, and Beige</li>
-                <li><strong>Price:</strong> ₹249.00</li>
-            </ul>
+header {
+    background-color: #1a237e;
+    color: white;
+    padding: 20px;
+    text-align: center;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
 
-                  </div>
-    </section>
+header h1 {
+    font-size: 2.5rem;
+    margin-bottom: 10px;
+}
 
-    <!-- Customer Reviews Section -->
-    <section id="reviews" class="reviews">
-        <h2>Customer Reviews</h2>
-        <div class="review">
-            <p><em>"The vase is even more beautiful in person! It’s a perfect addition to my living room."</em></p>
-            <p>- Sarah J.</p>
-        </div>
-        <div class="review">
-            <p><em>"Great craftsmanship, and the vase arrived in perfect condition. I love the neutral color options."</em></p>
-            <p>- Mark A.</p>
-        </div>
-    </section>
+header nav ul {
+    list-style-type: none;
+    display: flex;
+    justify-content: center;
+}
 
-    <!-- Contact Section -->
-    <section id="contact" class="contact">
-        <h2>Contact Us</h2>
-        <p>If you have any questions about our flower vases, feel free to reach out.</p>
-        <form action="submit_contact.php" method="post">
-            <label for="name">Name:</label>
-            <input type="text" id="name" name="name" required>
-            
-            <label for="email">Email:</label>
-            <input type="email" id="email" name="email" required>
-            
-            <label for="message">Message:</label>
-            <textarea id="message" name="message" rows="4" required></textarea>
-            
-            <button type="submit">Send Message</button>
-        </form>
-    </section>
+header nav ul li {
+    margin: 0 20px;
+}
 
-    <!-- Footer -->
-    <footer>
-        <p>&copy; 2024 Flower Vase Collection. All rights reserved.</p>
-    </footer>
+header nav ul li a {
+    color: white;
+    text-decoration: none;
+    font-size: 1.1rem;
+    transition: color 0.3s;
+}
 
-</body>
-</html>
+header nav ul li a:hover {
+    color: #ff4081;
+}
+
+/* Vase Details Section */
+.vase-details {
+    display: flex;
+    flex-wrap: wrap;
+    max-width: 1200px;
+    margin: 40px auto;
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+}
+
+.image-container {
+    flex: 1;
+    margin-right: 30px;
+    display: flex;
+    justify-content: center;
+}
+
+.vase-image {
+    width: 100%;
+    max-width: 450px;
+    height: auto;
+    border-radius: 10px;
+    object-fit: cover;
+}
+
+.vase-info {
+    flex: 2;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.vase-info h2 {
+    font-size: 2rem;
+    color: #1a237e;
+    margin-bottom: 20px;
+}
+
+.vase-info p {
+    font-size: 1.1rem;
+    color: #666;
+    margin-bottom: 15px;
+}
+
+.vase-specs {
+    list-style-type: none;
+}
+
+.vase-specs li {
+    font-size: 1.1rem;
+    padding: 8px 0;
+    color: #333;
+}
+
+.vase-specs li strong {
+    color: #1a237e;
+}
+
+/* Add to Cart Button */
+.add-to-cart-btn {
+    background-color: #ff4081;
+    color: white;
+    padding: 12px 20px;
+    border: none;
+    font-size: 1.2rem;
+    cursor: pointer;
+    border-radius: 5px;
+    transition: background-color 0.3s;
+}
+
+.add-to-cart-btn:hover {
+    background-color: #ff6e95;
+}
+
+/* Customer Reviews Section */
+.reviews {
+    max-width: 1200px;
+    margin: 40px auto;
+    padding: 30px;
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.reviews h2 {
+    font-size: 2rem;
+    color: #1a237e;
+    margin-bottom: 20px;
+}
+
+.review {
+    background-color: #f0f0f0;
+    padding: 20px;
+    border-radius: 8px;
+    margin-bottom: 20px;
+}
+
+.review p {
+    font-size: 1rem;
+    color: #555;
+}
+
+.review p em {
+    font-weight: bold;
+}
+
+.review p:last-child {
+    font-style: italic;
+    text-align: right;
+}
+
+.write-review-btn {
+    background-color: #1a237e;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    font-size: 1rem;
+    cursor: pointer;
+    border-radius: 5px;
+    transition: background-color 0.3s;
+}
+
+.write-review-btn:hover {
+    background-color: #3949ab;
+}
+
+/* Rating Summary */
+.rating-summary {
+    max-width: 1200px;
+    margin: 40px auto;
+    padding: 30px;
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    text-align: center;
+}
+
+.rating-summary h3 {
+    font-size: 1.8rem;
+    color: #1a237e;
+    margin-bottom: 15px;
+}
+
+.rating-summary p {
+    font-size: 1.2rem;
+    color: #666;
+}
+
+.rating-bars {
+    margin-top: 20px;
+    text-align: left;
+}
+
+.rating-bars p {
+    font-size: 1.1rem;
+    color: #555;
+    margin: 5px 0;
+}
+
+.rating-bars span {
+    display: inline-block;
+    background-color: #ff4081;
+    height: 10px;
+    border-radius: 5px;
+}
+
+/* Related Products */
+.related-products {
+    max-width: 1200px;
+    margin: 40px auto;
+    padding: 30px;
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    display: flex;
+    justify-content: space-between;
+    gap: 20px;
+}
+
+.related-item {
+    flex: 1;
+    text-align: center;
+}
+
+.related-item img {
+    width: 100%;
+    max-width: 250px;
+    border-radius: 10px;
+    margin-bottom: 10px;
+}
+
+.related-item p {
+    font-size: 1.1rem;
+    color: #333;
+}
+
+.add-to-cart-btn {
+    margin-top: 10px;
+}
+
+/* Contact Section */
+.contact {
+    max-width: 1200px;
+    margin: 40px auto;
+    padding: 30px;
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.contact h2 {
+    font-size: 2rem;
+    color: #1a237e;
+    margin-bottom: 20px;
+}
+
+.contact p {
+    font-size: 1.1rem;
+    margin-bottom: 20px;
+}
+
+.contact form {
+    display: flex;
+    flex-direction: column;
+}
+
+.contact form label {
+    font-size: 1.1rem;
+    margin-bottom: 5px;
+    color: #333;
+}
+
+.contact form input,
+.contact form textarea {
+    padding: 10px;
+    margin-bottom: 15px;
+    font-size: 1rem;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    width: 100%;
+}
+
+.contact form button {
+    background-color: #1a237e;
+    color: white;
+    padding: 12px;
+    font-size: 1.1rem;
+    border: none;
+    cursor: pointer;
+    border-radius: 5px;
+    transition: background-color 0.3s;
+}
+
+.contact form button:hover {
+    background-color: #3949ab;
+}
+
+/* Footer */
+footer {
+    background-color: #1a237e;
+    color: white;
+    padding: 15px;
+    text-align: center;
+    font-size: 1rem;
+    margin-top: 30px;
+}
+
+/* Responsive Styles */
+@media (max-width: 768px) {
+    .vase-details {
+        flex-direction: column;
+        padding: 20px;
+    }
+
+    .image-container {
+        margin: 0;
+    }
+
+    .vase-info {
+        margin-top: 20px;
+    }
+
+    .related-products {
+        flex-direction: column;
+        gap: 20px;
+    }
+
+    .rating-summary,
+    .reviews,
+    .contact {
+        padding: 20px;
+    }
+}
