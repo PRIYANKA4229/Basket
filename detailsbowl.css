@@ -1,74 +1,191 @@
-/* Reset browser default styles */
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-family: 'Arial', sans-serif;
 }
 
-/* Global Styles */
 body {
+    font-family: 'Roboto', sans-serif;
     background-color: #f5f5f5;
     color: #333;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    min-height: 100vh;
-}
-
-/* Product Container Styling */
-.product-container {
-    background-color: #ffffff;
-    border-radius: 10px;
-    box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.1);
-    width: 100%;
-    max-width: 600px;
+    line-height: 1.6;
     padding: 20px;
-    margin: 20px;
 }
 
-/* Product Title */
+.product-container {
+    max-width: 800px;
+    margin: 40px auto;
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
 .product-title {
+    font-size: 2.2rem;
+    color: #1a237e;
     text-align: center;
-    color: #4CAF50;
-    font-size: 28px;
     margin-bottom: 20px;
 }
 
-/* Product Image */
 .product-image {
     width: 100%;
     height: auto;
-    border-radius: 5px;
-    margin-bottom: 15px;
+    display: block;
+    margin: 20px 0;
+    border-radius: 10px;
+    object-fit: cover;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
 }
 
-/* Product Description */
 .product-description {
-    font-size: 16px;
-    margin-bottom: 15px;
-}
-
-/* Product Price */
-.product-price {
-    font-size: 22px;
-    color: #FF5722;
+    font-size: 1.1rem;
+    color: #555;
     margin-bottom: 20px;
 }
 
-/* Add to Cart Button */
+.product-price {
+    font-size: 1.8rem;
+    color: #e91e63;
+    text-align: center;
+    margin-bottom: 20px;
+}
+
 .add-to-cart-btn {
-    background-color: #4CAF50;
+    background-color: #ff4081;
     color: white;
     padding: 12px 20px;
     border: none;
-    border-radius: 5px;
-    font-size: 16px;
     cursor: pointer;
-    width: 100%;
-    transition: background-color 0.3s ease;
+    display: block;
+    margin: 20px auto;
+    font-size: 1rem;
+    border-radius: 5px;
+    transition: background-color 0.3s;
 }
 
 .add-to-cart-btn:hover {
-    background-color: #45a049;
+    background-color: #ff6e95;
+}
+
+/* Product Details */
+.product-details ul {
+    list-style-type: square;
+    padding-left: 20px;
+    margin: 20px 0;
+}
+
+.product-details ul li {
+    margin-bottom: 10px;
+    font-size: 1rem;
+    color: #333;
+}
+
+/* Customer Reviews & Rating Summary */
+.customer-reviews, .rating-summary, .related-products, .shipping-info {
+    margin: 40px 0;
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.review {
+    background-color: #f0f0f0;
+    padding: 15px;
+    border-radius: 8px;
+    margin-bottom: 15px;
+}
+
+.rating-summary h3, .customer-reviews h3 {
+    font-size: 1.5rem;
+    color: #1a237e;
+    margin-bottom: 15px;
+}
+
+.rating-bars p {
+    font-size: 1rem;
+    color: #555;
+    margin: 10px 0;
+}
+
+.rating-bars span {
+    display: inline-block;
+    background-color: #ff4081;
+    height: 10px;
+    width: 100px;
+    border-radius: 5px;
+    vertical-align: middle;
+    margin-left: 10px;
+}
+
+/* Related Products */
+.related-products {
+    display: flex;
+    justify-content: space-between;
+    gap: 20px;
+}
+
+.related-item {
+    flex: 1;
+    text-align: center;
+}
+
+.related-item img {
+    width: 100%;
+    max-width: 200px;
+    border-radius: 10px;
+    margin-bottom: 10px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.related-item p {
+    font-size: 1rem;
+    color: #333;
+}
+
+/* Review Button */
+.write-review-btn {
+    background-color: #673ab7;
+    color: white;
+    padding: 10px 15px;
+    border: none;
+    cursor: pointer;
+    border-radius: 5px;
+    transition: background-color 0.3s;
+}
+
+.write-review-btn:hover {
+    background-color: #7e57c2;
+}
+
+/* Shipping Information */
+.shipping-info p {
+    font-size: 1.1rem;
+    color: #555;
+}
+
+/* Footer */
+footer {
+    background-color: #1a237e;
+    color: white;
+    padding: 15px;
+    text-align: center;
+    font-size: 1rem;
+    margin-top: 30px;
+}
+
+/* Responsive Styles */
+@media (max-width: 768px) {
+    .related-products {
+        flex-direction: column;
+    }
+
+    .product-container {
+        padding: 20px;
+    }
+
+    .customer-reviews, .rating-summary, .related-products, .shipping-info {
+        padding: 20px;
+    }
 }
